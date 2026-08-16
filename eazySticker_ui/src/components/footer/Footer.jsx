@@ -1,11 +1,15 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHeart} from '@fortawesome/free-solid-svg-icons';
-import './footer.css';
 
 export default function Footer() {
     return (
-        <footer className="footer">
-            Built with <FontAwesomeIcon icon={faHeart} className="footer-icon" aria-hidden="true" /> by <a href="https://www.linkedin.com/in/osamamd496" target="_blank" rel="noopener noreferrer">Md Osama</a>
+        <footer className="flex justify-center items-center py-4 font-primary text-gray-700">
+            Built with <FontAwesomeIcon icon={faHeart} className="text-red-600 mx-1 animate-pulse" aria-hidden="true" />
+             by 
+             <a href="https://www.linkedin.com/in/osamamd496" target="_blank" rel="noopener noreferrer" 
+             className="text-primary font-semibold px-1 transition-colors duration-300 hover:text-dark">
+             Md Osama
+             </a>
         </footer>
     )
 }

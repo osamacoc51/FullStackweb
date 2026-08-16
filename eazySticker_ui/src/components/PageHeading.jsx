@@ -3,9 +3,9 @@ import PageTitle from './PageTitle';
 
 export default function PageHeading({title, children}) {
   return (
-    <div className="page-heading-container">
+    <div className="text-center max-w-xl mx-auto px-4 py-8">
       <PageTitle title={title} />
-      <span className="page-heading-paragraph">{children}</span>
+      <span className="font-primary leading-6 text-gray-600">{children}</span>
     </div>
   )
 }
