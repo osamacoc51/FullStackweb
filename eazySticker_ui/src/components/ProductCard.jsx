@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
             />
         </div>
-        <div className="relative h-48 p-4 flex flex-col font-primary">
+        <div className="relative h-20 p-4 flex flex-col font-primary">
             <h2 className="text-xl font-semibold text-primary mb-2">{product.name}</h2>
             <p className="text-base text-gray-600 mb-4">{product.description}</p>
         </div>
