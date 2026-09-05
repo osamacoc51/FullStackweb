@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShoppingBasket,
@@ -8,7 +8,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") === "dark" ? "dark" : "light";
+  });
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => {
@@ -18,19 +28,20 @@ export default function Header() {
       } else {
         document.documentElement.classList.remove("dark");
       }
+      localStorage.setItem("theme", newTheme);
       return newTheme;
     });
   };
 
   const navLinkClass =
-    "text-center text-lg font-primary font-semibold text-primary py-2";
+    "text-center text-lg font-primary font-semibold text-primary py-2 dark:text-light hover:text-dark dark:hover:text-lighter";
 
   return (
-    <header className="border-b border-gray-300 sticky top-0 z-20 bg-gray-100">
+    <header className="border-b border-gray-300 dark:border-gray-600 sticky top-0 z-20 bg-normalbg dark:bg-darkbg">
       <div className="flex items-center justify-between mx-auto max-w-6xl px-6 py-4">
         <a href="/" className="text-primary">
-          <FontAwesomeIcon icon={faTags} className="h-8 w-8" />
-          <span className="text-center text-lg font-primary font-semibold text-primary py-2">
+          <FontAwesomeIcon icon={faTags} className="h-8 w-8 dark:text-light" />
+          <span className="text-center text-lg font-primary font-semibold text-primary py-2 dark:text-light">
             Eazy Stickers
           </span>
         </a>
@@ -68,7 +79,7 @@ export default function Header() {
             </li>
             <li>
               <a href="/cart" className={navLinkClass}>
-                <FontAwesomeIcon icon={faShoppingBasket} className="h-6 w-6" />
+                <FontAwesomeIcon icon={faShoppingBasket} className="h-6 w-6 dark:text-light" />
               </a>
             </li>
           </ul>
