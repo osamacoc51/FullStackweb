@@ -6,7 +6,7 @@ export default function Cart() {
   const navigation = useNavigate();
 
   const handleClick = () => {
-    navigation("/home", { state: { username: "madan" } });
+    navigation("/home", { state: { username: "osama" } });
   };
 
   return (

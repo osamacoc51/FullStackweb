@@ -8,12 +8,13 @@ import Contact from './components/Contact.jsx';
 import Cart from './components/Cart.jsx';
 import Login from './components/Login.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import { productsLoader } from './components/productsLoader.js';
 import {createBrowserRouter, createRoutesFromElements, RouterProvider, Route} from "react-router-dom";
 
 const routeDefinitions = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
-    <Route index element={<Home />} />
-    <Route path="/home" element={<Home />} />
+    <Route index element={<Home />} loader={productsLoader} />
+    <Route path="/home" element={<Home />} loader={productsLoader} />
     <Route path="/about" element={<About />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/cart" element={<Cart />} />
