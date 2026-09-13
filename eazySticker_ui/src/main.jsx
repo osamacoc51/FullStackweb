@@ -4,10 +4,10 @@ import './index.css'
 import App from './App.jsx';
 import Home from './components/Home.jsx';
 import About from './components/About.jsx';
-import Contact from './components/contact.jsx';
-import Cart from './components/cart.jsx';
-import Login from './components/login.jsx';
-import ErrorPage from './components/errorPage.jsx';
+import Contact from './components/Contact.jsx';
+import Cart from './components/Cart.jsx';
+import Login from './components/Login.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 import {createBrowserRouter, createRoutesFromElements, RouterProvider, Route} from "react-router-dom";
 
 const routeDefinitions = createRoutesFromElements(

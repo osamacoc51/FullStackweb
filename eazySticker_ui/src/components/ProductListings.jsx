@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import ProductCard from "./ProductCard";
 import SearchBox from "./searchBox";
-import DropDown from "./dropDown";
+import DropDown from "./DropDown";
 
 const sortList = ["Popularity", "Price Low to High", "Price High to Low"];
 
